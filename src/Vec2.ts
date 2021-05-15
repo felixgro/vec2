@@ -1,15 +1,3 @@
-const clamp = (val: number, min: number, max: number): number => {
-   return Math.min(Math.max(val, min), max);
-};
-
-export const distanceBetween = (vecA: Vec2, vecB: Vec2): number => {
-   return vecA.distanceTo(vecB);
-}
-
-export const angleBetween = (vecA: Vec2, vecB: Vec2): number => {
-   return vecA.angleTo(vecB);
-}
-
 export default class Vec2 {
    public x: number;
    public y: number;
@@ -25,16 +13,10 @@ export default class Vec2 {
    static right = (): Vec2 => new Vec2(1, 0);
 
    static fromAngle(angle: number, length: number): Vec2 {
-      return new Vec2();
-   }
+      const x = Math.cos(angle) * length;
+      const y = Math.sin(angle) * length;
 
-   static lerp(vecA: Vec2, vecB: Vec2, progress: number): Vec2 {
-      if (progress > 1) progress = 1;
-      if (progress < 0) progress = 0;
-
-      const dirVec = vecB.clone().subtract(vecA);
-
-      return vecA.clone().add(dirVec.multiply(progress));
+      return new Vec2(x, y);
    }
 
    get rawPosition(): [number, number] {
@@ -79,8 +61,27 @@ export default class Vec2 {
       return this.divide(this.length);
    }
 
-   public equals(vec: Vec2): boolean {
-      return this.x === vec.x && this.y === vec.y;
+   public inverse(): Vec2 {
+      return this.multiply(-1);
+   }
+
+   public setMagnitude(mag: number): Vec2 {
+      return this.normalize().multiply(mag);
+   }
+
+   public clampMagnitude(min: number, max: number): Vec2 {
+      if (this.length < min) this.setMagnitude(min);
+      if (this.length > max) this.setMagnitude(max);
+
+      return this;
+   }
+
+   public dot(vec: Vec2): number {
+      return this.x * vec.x + this.y * vec.y;
+   }
+
+   public cross(vec: Vec2): number {
+      return this.x * vec.y + this.y * vec.x;
    }
 
    public distanceTo(vec: Vec2): number {
@@ -88,37 +89,26 @@ export default class Vec2 {
    }
 
    public angleTo(vec: Vec2): number {
-      let angle = Math.atan2(vec.x, vec.y) - Math.atan2(this.x, this.y);
+      let angle = Math.atan2(vec.y, vec.x) - Math.atan2(this.y, this.x);
 
-      if (angle > Math.PI) angle -= Math.PI;
-      if (angle < -Math.PI) angle += 2 * Math.PI;
+      // [0, 2π]:
+      // if (angle < 0) angle += 2 * Math.PI
+
+      // [-π, π]:
+      if (angle > Math.PI) {
+         angle -= 2 * Math.PI
+      } else if (angle <= -Math.PI) {
+         angle += 2 * Math.PI
+      }
 
       return angle;
    }
 
-   public clone(): Vec2 {
-      return new Vec2(this.x, this.y);
+   public equals(vec: Vec2): boolean {
+      return this.x === vec.x && this.y === vec.y;
    }
 
-   public drawOnCanvas(ctx: CanvasRenderingContext2D, options: {
-      origin: Vec2;
-      color: string;
-      width: number;
-   }): void {
-      ctx.save();
-      ctx.translate(...options.origin.rawPosition);
-
-      ctx.strokeStyle = options.color;
-      ctx.lineWidth = options.width;
-
-      const arrowWidth = clamp(3 * options.width, 7, 50);
-      const angle = Vec2.up().angleTo(this);
-
-      ctx.beginPath();
-      ctx.moveTo(0, 0);
-      ctx.lineTo(...this.rawPosition);
-      ctx.stroke();
-
-      ctx.restore();
+   public clone(): Vec2 {
+      return new Vec2(this.x, this.y);
    }
 }

@@ -1,8 +1,9 @@
 {
 	"name": "@felixgro/vec2",
 	"version": "0.0.1",
-	"main": "lib/Vec2.js",
+	"main": "lib/index.js",
 	"license": "MIT",
+	"private": false,
 	"scripts": {
 		"build": "tsc",
 		"serve": "parcel demo/index.html",

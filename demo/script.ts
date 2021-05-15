@@ -1,29 +1,26 @@
-import Vec2 from '../src/Vec2';
+import Vec2, { drawMany } from '../lib/index';
 
+// setup canvas
 const canvas = document.querySelector<HTMLCanvasElement>('#canvas');
-
 canvas.width = canvas.clientWidth;
 canvas.height = canvas.clientHeight;
 
+// get rendering context
 const ctx = canvas.getContext('2d');
 
-const origin = new Vec2(window.innerWidth / 2, window.innerHeight / 2);
+// create vectors
+const v1 = new Vec2(50, 100);
+const v2 = Vec2.fromAngle(0.5 * Math.PI, 30);
+const v3 = Vec2.left().multiply(100);
 
-const v1 = new Vec2(250, -240);
-const v2 = new Vec2(250, 240);
+// optional draw options
+const options = {
+   origin: new Vec2(canvas.width / 2, canvas.height / 2),
+   width: 2,
+   color: '#ccc',
+   arrow: true
+};
 
-v1.drawOnCanvas(ctx, {
-   origin,
-   color: '#000',
-   width: 3,
-});
-
-v2.drawOnCanvas(ctx, {
-   origin,
-   color: '#000',
-   width: 3,
-});
-
-console.log(Vec2.up().angleTo(v1) * 180 / Math.PI)
-console.log(Vec2.up().angleTo(v2) * 180 / Math.PI)
+// draw using rendering context..
+drawMany(ctx, options, v1, v2, v3);
 
