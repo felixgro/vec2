@@ -12,14 +12,17 @@ test('has static constructors', () => {
    expect(Vec2.right().rawPosition).toEqual([1, 0]);
 });
 
+test('has random constructor', () => {
+   const vec = Vec2.random();
+
+   expect(vec.length).toBe(1);
+});
+
 test('has angle constructor', () => {
    const vecA = Vec2.fromAngle(0, 1);
 
-   const vecB = Vec2.fromAngle(2 * Math.PI, 1);
-   const angleDeg = Vec2.up().angleTo(vecB) * 180 / Math.PI;
-
    expect(vecA.rawPosition).toEqual([1, 0]);
-   expect(angleDeg > 89.9 && angleDeg < 90.1).toBeTruthy();
+   expect(Vec2.right().angleTo(vecA)).toBe(0);
 });
 
 test('has length', () => {
