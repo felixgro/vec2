@@ -17,7 +17,16 @@ export const distanceBetween = (vecA: Vec2, vecB: Vec2): number => {
 }
 
 export const angleBetween = (vecA: Vec2, vecB: Vec2): number => {
-   return vecA.angleTo(vecB);
+   return Math.abs(vecA.angleTo(vecB));
+}
+
+export const randomBetween = (vecA: Vec2, vecB: Vec2): Vec2 => {
+   const diff = vecB.clone().subtract(vecA);
+
+   diff.x *= Math.random();
+   diff.y *= Math.random();
+
+   return vecA.clone().add(diff);
 }
 
 export interface DrawOptions {
@@ -60,11 +69,11 @@ export const draw = (vec: Vec2, ctx: CanvasRenderingContext2D, {
    ctx.restore();
 }
 
-export const drawMany = (ctx: CanvasRenderingContext2D, {
+export const drawMany = (vectors: Vec2[], ctx: CanvasRenderingContext2D, {
    origin = new Vec2(),
    color = 'black',
    width = 3,
    arrow = true
-}: DrawOptions, ...vectors: Vec2[]) => {
+}: DrawOptions) => {
    for (const vec of vectors) draw(vec, ctx, { origin, color, width, arrow });
 }
