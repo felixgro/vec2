@@ -5,22 +5,25 @@ const canvas = document.querySelector<HTMLCanvasElement>('#canvas');
 canvas.width = canvas.clientWidth;
 canvas.height = canvas.clientHeight;
 
-// get rendering context
+// get rendering context..
 const ctx = canvas.getContext('2d');
 
-// create vectors
-const v1 = new Vec2(50, 100);
-const v2 = Vec2.fromAngle(.0 * Math.PI, 30);
-const v3 = Vec2.left().setMagnitude(100);
+const origin = new Vec2(window.innerWidth / 2, window.innerHeight / 2);
 
-// optional draw options
+// create vectors..
+const v1 = Vec2.up().setMagnitude(100);
+const v2 = Vec2.right().setMagnitude(100);
+const v3 = Vec2.down().setMagnitude(100);
+const v4 = Vec2.left().setMagnitude(100);
+
+// optional draw options..
 const options = {
-   origin: new Vec2(canvas.width / 2, canvas.height / 2),
+   origin,
    width: 2,
-   color: '#ccc',
+   color: '#aaa',
    arrow: true
 };
 
-// draw using rendering context..
-drawMany([v1, v2, v3], ctx, options);
+// draw..
+drawMany([v1, v2, v3, v4], ctx, options);
 

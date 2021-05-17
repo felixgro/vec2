@@ -1,7 +1,7 @@
 import Vec2, {
+   toRadians,
+   toDegrees,
    clamp,
-   distanceBetween,
-   angleBetween,
    lerp,
    randomBetween
 } from '../src/index';
@@ -12,19 +12,12 @@ test('clamp', () => {
    expect(clamp(.5, 0, 1)).toBe(.5);
 });
 
-test('distanceBetween', () => {
-   const vecA = new Vec2();
-   const vecB = Vec2.left();
-
-   expect(distanceBetween(vecA, vecB)).toBe(1);
+test('toRadians', () => {
+   expect(toRadians(90)).toBe(Math.PI / 2);
 });
 
-test('angleBetween', () => {
-   const vecA = Vec2.up();
-   const vecB = Vec2.right();
-
-   expect(angleBetween(vecA, vecB)).toBe(Math.PI / 2);
-   expect(angleBetween(vecB, vecA)).toBe(angleBetween(vecA, vecB));
+test('toDegrees', () => {
+   expect(toDegrees(Math.PI / 2)).toBe(90);
 });
 
 test('lerp', () => {
@@ -42,8 +35,7 @@ test('randomBetween', () => {
 
    const vecC = randomBetween(vecA, vecB);
 
-   expect(vecC.x < vecB.x).toBeTruthy();
-   expect(vecA.x < vecC.x).toBeTruthy();
-   expect(vecC.y < vecB.y).toBeTruthy();
-   expect(vecA.y < vecC.y).toBeTruthy();
+   const isInRange = vecC.x < vecB.x && vecA.x < vecC.x && vecC.y < vecB.y && vecA.y < vecC.y;
+
+   expect(isInRange).toBeTruthy();
 });
