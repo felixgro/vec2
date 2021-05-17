@@ -58,14 +58,14 @@ export default class Vec2 {
    }
 
    /**
-    * Create a vector using an angle in radians and a length.
+    * Create a vector using an angle in radians as well as an optional length.
     * Angle of 0 results in an right-pointing vector.
     * 
-    * @param angle
+    * @param angle - in radians
     * @param length
     * @returns new vector
     */
-   static fromAngle(angle: number, length: number): Vec2 {
+   static fromAngle(angle: number, length = 1): Vec2 {
       const x = Math.cos(angle) * length;
       const y = Math.sin(angle) * length;
 
@@ -172,6 +172,27 @@ export default class Vec2 {
    }
 
    /**
+    * Rotate vector around origin.
+    * 
+    * @param angle in radians
+    * @param origin (0, 0)
+    * @param clockwise true
+    */
+   public rotate(angle: number, clockwise = true, origin = new Vec2()): Vec2 {
+      const length = this.length;
+      const diff = this.clone().subtract(origin);
+      if (!clockwise) angle *= -1;
+
+      this.x = Math.cos(angle) * diff.x - Math.sin(angle) * diff.y;
+      this.y = Math.sin(angle) * diff.x + Math.cos(angle) * diff.y;
+
+      this.add(origin);
+      this.setMagnitude(length);
+
+      return this;
+   }
+
+   /**
     * Set explicit length for vector.
     * 
     * @param mag 
@@ -216,38 +237,6 @@ export default class Vec2 {
    }
 
    /**
-    * Get distance to another vector.
-    * 
-    * @param vec 
-    * @returns distance to vector
-    */
-   public distanceTo(vec: Vec2): number {
-      return vec.clone().subtract(this).length
-   }
-
-   /**
-    * Get angle to another vector in range [-π, π].
-    * 
-    * @param vec 
-    * @returns angle between two vectors in radians
-    */
-   public angleTo(vec: Vec2): number {
-      let angle = Math.atan2(vec.y, vec.x) - Math.atan2(this.y, this.x);
-
-      // [0, 2π]:
-      // if (angle < 0) angle += 2 * Math.PI
-
-      // [-π, π]:
-      if (angle > Math.PI) {
-         angle -= 2 * Math.PI
-      } else if (angle <= -Math.PI) {
-         angle += 2 * Math.PI
-      }
-
-      return angle;
-   }
-
-   /**
     * Check vector coordinates for equality.
     * 
     * @param vec 
@@ -264,5 +253,40 @@ export default class Vec2 {
     */
    public clone(): Vec2 {
       return new Vec2(this.x, this.y);
+   }
+
+   /**
+    * Get distance to another vector.
+    * 
+    * @param vec 
+    * @returns distance to vector
+    */
+   public distanceTo(vec: Vec2): number {
+      return vec.clone().subtract(this).length
+   }
+
+   /**
+    * Get angle to another vector in range [-π, π].
+    * fullRange shifts the range to [0, 2π].
+    * 
+    * @param vec 
+    * @returns angle in radians
+    */
+   public angleTo(vec: Vec2, fullRange = false): number {
+      let angle = Math.atan2(vec.y, vec.x) - Math.atan2(this.y, this.x);
+
+      if (fullRange) {
+         // [0, 2π]
+         if (angle < 0) angle += 2 * Math.PI;
+      } else {
+         // [-π, π]
+         if (angle > Math.PI) {
+            angle -= 2 * Math.PI
+         } else if (angle <= -Math.PI) {
+            angle += 2 * Math.PI
+         }
+      }
+
+      return angle;
    }
 }

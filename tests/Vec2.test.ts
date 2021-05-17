@@ -5,7 +5,7 @@ test('has default constructor', () => {
    expect(new Vec2(1, 1).rawPosition).toEqual([1, 1]);
 });
 
-test('has static constructors', () => {
+test('has static normal constructors', () => {
    expect(Vec2.up().rawPosition).toEqual([0, -1]);
    expect(Vec2.down().rawPosition).toEqual([0, 1]);
    expect(Vec2.left().rawPosition).toEqual([-1, 0]);
@@ -39,6 +39,18 @@ test('can inverse', () => {
    const vec = new Vec2(5, -2);
 
    expect(vec.inverse().rawPosition).toEqual([-5, 2]);
+});
+
+test('can rotate', () => {
+   const vec = Vec2.up();
+
+   vec.rotate(Math.PI / 2);
+
+   expect(Vec2.right().angleTo(vec)).toBeCloseTo(0);
+
+   vec.rotate(Math.PI / 2, false);
+
+   expect(Vec2.up().angleTo(vec)).toBeCloseTo(0);
 });
 
 test('can set magnitude', () => {
