@@ -153,7 +153,7 @@ export default class Vec2 {
    }
 
    /**
-    * Set vector's length to 0 while keeping it's direction.
+    * Set vector's length to 1 while keeping it's direction.
     * 
     * @param n
     * @returns this
