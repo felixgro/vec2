@@ -70,6 +70,7 @@ vec.normalize();
 vec.inverse();
 vec.clone();
 
+vec.rotate(number, boolean);
 vec.setMagnitude(number);
 vec.clampMagnitude(number, number);
 
