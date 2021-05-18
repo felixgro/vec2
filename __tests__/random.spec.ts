@@ -1,4 +1,4 @@
-import Vec2, { randomBetween } from '../../src/index';
+import Vec2, { randomBetween } from '../src/index';
 
 test('randomBetween', () => {
    const vecA = new Vec2(-5, -5);

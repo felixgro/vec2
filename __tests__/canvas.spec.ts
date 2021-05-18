@@ -1,4 +1,4 @@
-import Vec2, { draw, drawMany } from '../../src/index';
+import Vec2, { draw, drawMany } from '../src/index';
 
 const getCtx = (): CanvasRenderingContext2D => {
    const canvas = document.createElement('canvas');

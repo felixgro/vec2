@@ -1,5 +1,5 @@
-import Vec2 from '../../src/Vec2';
-import { toRadians, toDegrees, lerp } from '../../src/helpers/math';
+import Vec2 from '../src/Vec2';
+import { toRadians, toDegrees, lerp } from '../src/helpers/math';
 
 test('toRadians', () => {
    expect(toRadians(90)).toBe(Math.PI / 2);
