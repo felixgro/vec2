@@ -8,6 +8,13 @@ export interface DrawOptions {
    arrow?: boolean;
 }
 
+/**
+ * Render a vector using specified canvas2d context.
+ * 
+ * @param vec
+ * @param ctx
+ * @param options
+ */
 export const draw = (vec: Vec2, ctx: CanvasRenderingContext2D, {
    origin = new Vec2(),
    color = 'black',
@@ -41,6 +48,13 @@ export const draw = (vec: Vec2, ctx: CanvasRenderingContext2D, {
    ctx.restore();
 }
 
+/**
+ * Render multiple vectors with specified canvas2d context.
+ * 
+ * @param vectors
+ * @param ctx
+ * @param options
+ */
 export const drawMany = (vectors: Vec2[], ctx: CanvasRenderingContext2D, {
    origin = new Vec2(),
    color = 'black',
