@@ -90,12 +90,7 @@ export default class Vec2 {
     * Get absolute length of vector.
     */
    get length(): number {
-      let length = Math.sqrt(this.lengthSquared);
-
-      // floating point number precision..
-      if (length < 1.001 && length > 0.999) length = 1;
-
-      return length;
+      return Math.sqrt(this.lengthSquared);
    }
 
    /**
@@ -144,8 +139,6 @@ export default class Vec2 {
     * @returns this
     */
    public divide(divisor: Vec2 | number): Vec2 {
-      if (!divisor) throw new Error('Cannot divide by 0');
-
       this.x /= typeof divisor === 'number' ? divisor : divisor.x;
       this.y /= typeof divisor === 'number' ? divisor : divisor.y;
 

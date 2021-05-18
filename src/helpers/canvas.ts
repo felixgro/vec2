@@ -1,33 +1,5 @@
-import Vec2 from './Vec2';
-
-export const clamp = (value: number, min: number, max: number): number => {
-   return Math.min(Math.max(value, min), max);
-}
-
-export const toDegrees = (radians: number): number => {
-   return radians * 180 / Math.PI;
-}
-
-export const toRadians = (degrees: number): number => {
-   return degrees * Math.PI / 180;
-}
-
-export const lerp = (vecA: Vec2, vecB: Vec2, progress: number): Vec2 => {
-   progress = clamp(progress, 0, 1);
-
-   const dirVec = vecB.clone().subtract(vecA);
-
-   return vecA.clone().add(dirVec.multiply(progress));
-}
-
-export const randomBetween = (vecA: Vec2, vecB: Vec2): Vec2 => {
-   const diff = vecB.clone().subtract(vecA);
-
-   diff.x *= Math.random();
-   diff.y *= Math.random();
-
-   return vecA.clone().add(diff);
-}
+import Vec2 from '../Vec2';
+import { clamp } from './math';
 
 export interface DrawOptions {
    origin?: Vec2;
@@ -41,7 +13,7 @@ export const draw = (vec: Vec2, ctx: CanvasRenderingContext2D, {
    color = 'black',
    width = 3,
    arrow = true
-}: DrawOptions) => {
+}: DrawOptions = {}) => {
    ctx.save();
    ctx.strokeStyle = color;
    ctx.lineWidth = width;
@@ -74,6 +46,6 @@ export const drawMany = (vectors: Vec2[], ctx: CanvasRenderingContext2D, {
    color = 'black',
    width = 3,
    arrow = true
-}: DrawOptions) => {
+}: DrawOptions = {}) => {
    for (const vec of vectors) draw(vec, ctx, { origin, color, width, arrow });
 }

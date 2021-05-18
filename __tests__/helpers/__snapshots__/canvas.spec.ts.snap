@@ -1,0 +1,1665 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`draw with custom options 1`] = `
+Array [
+  Object {
+    "props": Object {},
+    "transform": Array [
+      1,
+      0,
+      0,
+      1,
+      0,
+      0,
+    ],
+    "type": "save",
+  },
+  Object {
+    "props": Object {
+      "value": "#ff0000",
+    },
+    "transform": Array [
+      1,
+      0,
+      0,
+      1,
+      0,
+      0,
+    ],
+    "type": "strokeStyle",
+  },
+  Object {
+    "props": Object {
+      "value": 3,
+    },
+    "transform": Array [
+      1,
+      0,
+      0,
+      1,
+      0,
+      0,
+    ],
+    "type": "lineWidth",
+  },
+  Object {
+    "props": Object {
+      "value": "round",
+    },
+    "transform": Array [
+      1,
+      0,
+      0,
+      1,
+      0,
+      0,
+    ],
+    "type": "lineCap",
+  },
+  Object {
+    "props": Object {
+      "x": 100,
+      "y": 100,
+    },
+    "transform": Array [
+      1,
+      0,
+      0,
+      1,
+      100,
+      100,
+    ],
+    "type": "translate",
+  },
+  Object {
+    "props": Object {},
+    "transform": Array [
+      1,
+      0,
+      0,
+      1,
+      100,
+      100,
+    ],
+    "type": "beginPath",
+  },
+  Object {
+    "props": Object {
+      "x": 0,
+      "y": 0,
+    },
+    "transform": Array [
+      1,
+      0,
+      0,
+      1,
+      100,
+      100,
+    ],
+    "type": "moveTo",
+  },
+  Object {
+    "props": Object {
+      "x": 0,
+      "y": -1,
+    },
+    "transform": Array [
+      1,
+      0,
+      0,
+      1,
+      100,
+      100,
+    ],
+    "type": "lineTo",
+  },
+  Object {
+    "props": Object {
+      "path": Array [
+        Object {
+          "props": Object {},
+          "transform": Array [
+            1,
+            0,
+            0,
+            1,
+            100,
+            100,
+          ],
+          "type": "beginPath",
+        },
+        Object {
+          "props": Object {
+            "x": 0,
+            "y": 0,
+          },
+          "transform": Array [
+            1,
+            0,
+            0,
+            1,
+            100,
+            100,
+          ],
+          "type": "moveTo",
+        },
+        Object {
+          "props": Object {
+            "x": 0,
+            "y": -1,
+          },
+          "transform": Array [
+            1,
+            0,
+            0,
+            1,
+            100,
+            100,
+          ],
+          "type": "lineTo",
+        },
+      ],
+    },
+    "transform": Array [
+      1,
+      0,
+      0,
+      1,
+      100,
+      100,
+    ],
+    "type": "stroke",
+  },
+  Object {
+    "props": Object {},
+    "transform": Array [
+      1,
+      0,
+      0,
+      1,
+      0,
+      0,
+    ],
+    "type": "restore",
+  },
+]
+`;
+
+exports[`draw with default options 1`] = `
+Array [
+  Object {
+    "props": Object {},
+    "transform": Array [
+      1,
+      0,
+      0,
+      1,
+      0,
+      0,
+    ],
+    "type": "save",
+  },
+  Object {
+    "props": Object {
+      "value": "#000000",
+    },
+    "transform": Array [
+      1,
+      0,
+      0,
+      1,
+      0,
+      0,
+    ],
+    "type": "strokeStyle",
+  },
+  Object {
+    "props": Object {
+      "value": 3,
+    },
+    "transform": Array [
+      1,
+      0,
+      0,
+      1,
+      0,
+      0,
+    ],
+    "type": "lineWidth",
+  },
+  Object {
+    "props": Object {
+      "value": "round",
+    },
+    "transform": Array [
+      1,
+      0,
+      0,
+      1,
+      0,
+      0,
+    ],
+    "type": "lineCap",
+  },
+  Object {
+    "props": Object {
+      "x": 0,
+      "y": 0,
+    },
+    "transform": Array [
+      1,
+      0,
+      0,
+      1,
+      0,
+      0,
+    ],
+    "type": "translate",
+  },
+  Object {
+    "props": Object {},
+    "transform": Array [
+      1,
+      0,
+      0,
+      1,
+      0,
+      0,
+    ],
+    "type": "beginPath",
+  },
+  Object {
+    "props": Object {
+      "x": 0,
+      "y": 0,
+    },
+    "transform": Array [
+      1,
+      0,
+      0,
+      1,
+      0,
+      0,
+    ],
+    "type": "moveTo",
+  },
+  Object {
+    "props": Object {
+      "x": 0,
+      "y": -1,
+    },
+    "transform": Array [
+      1,
+      0,
+      0,
+      1,
+      0,
+      0,
+    ],
+    "type": "lineTo",
+  },
+  Object {
+    "props": Object {
+      "path": Array [
+        Object {
+          "props": Object {},
+          "transform": Array [
+            1,
+            0,
+            0,
+            1,
+            0,
+            0,
+          ],
+          "type": "beginPath",
+        },
+        Object {
+          "props": Object {
+            "x": 0,
+            "y": 0,
+          },
+          "transform": Array [
+            1,
+            0,
+            0,
+            1,
+            0,
+            0,
+          ],
+          "type": "moveTo",
+        },
+        Object {
+          "props": Object {
+            "x": 0,
+            "y": -1,
+          },
+          "transform": Array [
+            1,
+            0,
+            0,
+            1,
+            0,
+            0,
+          ],
+          "type": "lineTo",
+        },
+      ],
+    },
+    "transform": Array [
+      1,
+      0,
+      0,
+      1,
+      0,
+      0,
+    ],
+    "type": "stroke",
+  },
+  Object {
+    "props": Object {
+      "x": 0,
+      "y": -1,
+    },
+    "transform": Array [
+      1,
+      0,
+      0,
+      1,
+      0,
+      -1,
+    ],
+    "type": "translate",
+  },
+  Object {
+    "props": Object {
+      "angle": 0,
+    },
+    "transform": Array [
+      1,
+      0,
+      0,
+      1,
+      0,
+      -1,
+    ],
+    "type": "rotate",
+  },
+  Object {
+    "props": Object {},
+    "transform": Array [
+      1,
+      0,
+      0,
+      1,
+      0,
+      -1,
+    ],
+    "type": "beginPath",
+  },
+  Object {
+    "props": Object {
+      "x": 0,
+      "y": 0,
+    },
+    "transform": Array [
+      1,
+      0,
+      0,
+      1,
+      0,
+      -1,
+    ],
+    "type": "moveTo",
+  },
+  Object {
+    "props": Object {
+      "x": 7,
+      "y": 7,
+    },
+    "transform": Array [
+      1,
+      0,
+      0,
+      1,
+      0,
+      -1,
+    ],
+    "type": "lineTo",
+  },
+  Object {
+    "props": Object {
+      "x": 0,
+      "y": 0,
+    },
+    "transform": Array [
+      1,
+      0,
+      0,
+      1,
+      0,
+      -1,
+    ],
+    "type": "moveTo",
+  },
+  Object {
+    "props": Object {
+      "x": -7,
+      "y": 7,
+    },
+    "transform": Array [
+      1,
+      0,
+      0,
+      1,
+      0,
+      -1,
+    ],
+    "type": "lineTo",
+  },
+  Object {
+    "props": Object {
+      "path": Array [
+        Object {
+          "props": Object {},
+          "transform": Array [
+            1,
+            0,
+            0,
+            1,
+            0,
+            -1,
+          ],
+          "type": "beginPath",
+        },
+        Object {
+          "props": Object {
+            "x": 0,
+            "y": 0,
+          },
+          "transform": Array [
+            1,
+            0,
+            0,
+            1,
+            0,
+            -1,
+          ],
+          "type": "moveTo",
+        },
+        Object {
+          "props": Object {
+            "x": 7,
+            "y": 7,
+          },
+          "transform": Array [
+            1,
+            0,
+            0,
+            1,
+            0,
+            -1,
+          ],
+          "type": "lineTo",
+        },
+        Object {
+          "props": Object {
+            "x": 0,
+            "y": 0,
+          },
+          "transform": Array [
+            1,
+            0,
+            0,
+            1,
+            0,
+            -1,
+          ],
+          "type": "moveTo",
+        },
+        Object {
+          "props": Object {
+            "x": -7,
+            "y": 7,
+          },
+          "transform": Array [
+            1,
+            0,
+            0,
+            1,
+            0,
+            -1,
+          ],
+          "type": "lineTo",
+        },
+      ],
+    },
+    "transform": Array [
+      1,
+      0,
+      0,
+      1,
+      0,
+      -1,
+    ],
+    "type": "stroke",
+  },
+  Object {
+    "props": Object {},
+    "transform": Array [
+      1,
+      0,
+      0,
+      1,
+      0,
+      0,
+    ],
+    "type": "restore",
+  },
+]
+`;
+
+exports[`drawMany with custom options 1`] = `
+Array [
+  Object {
+    "props": Object {},
+    "transform": Array [
+      1,
+      0,
+      0,
+      1,
+      0,
+      0,
+    ],
+    "type": "save",
+  },
+  Object {
+    "props": Object {
+      "value": "#ff0000",
+    },
+    "transform": Array [
+      1,
+      0,
+      0,
+      1,
+      0,
+      0,
+    ],
+    "type": "strokeStyle",
+  },
+  Object {
+    "props": Object {
+      "value": 5,
+    },
+    "transform": Array [
+      1,
+      0,
+      0,
+      1,
+      0,
+      0,
+    ],
+    "type": "lineWidth",
+  },
+  Object {
+    "props": Object {
+      "value": "round",
+    },
+    "transform": Array [
+      1,
+      0,
+      0,
+      1,
+      0,
+      0,
+    ],
+    "type": "lineCap",
+  },
+  Object {
+    "props": Object {
+      "x": 100,
+      "y": 100,
+    },
+    "transform": Array [
+      1,
+      0,
+      0,
+      1,
+      100,
+      100,
+    ],
+    "type": "translate",
+  },
+  Object {
+    "props": Object {},
+    "transform": Array [
+      1,
+      0,
+      0,
+      1,
+      100,
+      100,
+    ],
+    "type": "beginPath",
+  },
+  Object {
+    "props": Object {
+      "x": 0,
+      "y": 0,
+    },
+    "transform": Array [
+      1,
+      0,
+      0,
+      1,
+      100,
+      100,
+    ],
+    "type": "moveTo",
+  },
+  Object {
+    "props": Object {
+      "x": 0,
+      "y": -1,
+    },
+    "transform": Array [
+      1,
+      0,
+      0,
+      1,
+      100,
+      100,
+    ],
+    "type": "lineTo",
+  },
+  Object {
+    "props": Object {
+      "path": Array [
+        Object {
+          "props": Object {},
+          "transform": Array [
+            1,
+            0,
+            0,
+            1,
+            100,
+            100,
+          ],
+          "type": "beginPath",
+        },
+        Object {
+          "props": Object {
+            "x": 0,
+            "y": 0,
+          },
+          "transform": Array [
+            1,
+            0,
+            0,
+            1,
+            100,
+            100,
+          ],
+          "type": "moveTo",
+        },
+        Object {
+          "props": Object {
+            "x": 0,
+            "y": -1,
+          },
+          "transform": Array [
+            1,
+            0,
+            0,
+            1,
+            100,
+            100,
+          ],
+          "type": "lineTo",
+        },
+      ],
+    },
+    "transform": Array [
+      1,
+      0,
+      0,
+      1,
+      100,
+      100,
+    ],
+    "type": "stroke",
+  },
+  Object {
+    "props": Object {},
+    "transform": Array [
+      1,
+      0,
+      0,
+      1,
+      0,
+      0,
+    ],
+    "type": "restore",
+  },
+  Object {
+    "props": Object {},
+    "transform": Array [
+      1,
+      0,
+      0,
+      1,
+      0,
+      0,
+    ],
+    "type": "save",
+  },
+  Object {
+    "props": Object {
+      "value": "#ff0000",
+    },
+    "transform": Array [
+      1,
+      0,
+      0,
+      1,
+      0,
+      0,
+    ],
+    "type": "strokeStyle",
+  },
+  Object {
+    "props": Object {
+      "value": 5,
+    },
+    "transform": Array [
+      1,
+      0,
+      0,
+      1,
+      0,
+      0,
+    ],
+    "type": "lineWidth",
+  },
+  Object {
+    "props": Object {
+      "value": "round",
+    },
+    "transform": Array [
+      1,
+      0,
+      0,
+      1,
+      0,
+      0,
+    ],
+    "type": "lineCap",
+  },
+  Object {
+    "props": Object {
+      "x": 100,
+      "y": 100,
+    },
+    "transform": Array [
+      1,
+      0,
+      0,
+      1,
+      100,
+      100,
+    ],
+    "type": "translate",
+  },
+  Object {
+    "props": Object {},
+    "transform": Array [
+      1,
+      0,
+      0,
+      1,
+      100,
+      100,
+    ],
+    "type": "beginPath",
+  },
+  Object {
+    "props": Object {
+      "x": 0,
+      "y": 0,
+    },
+    "transform": Array [
+      1,
+      0,
+      0,
+      1,
+      100,
+      100,
+    ],
+    "type": "moveTo",
+  },
+  Object {
+    "props": Object {
+      "x": 0,
+      "y": 1,
+    },
+    "transform": Array [
+      1,
+      0,
+      0,
+      1,
+      100,
+      100,
+    ],
+    "type": "lineTo",
+  },
+  Object {
+    "props": Object {
+      "path": Array [
+        Object {
+          "props": Object {},
+          "transform": Array [
+            1,
+            0,
+            0,
+            1,
+            100,
+            100,
+          ],
+          "type": "beginPath",
+        },
+        Object {
+          "props": Object {
+            "x": 0,
+            "y": 0,
+          },
+          "transform": Array [
+            1,
+            0,
+            0,
+            1,
+            100,
+            100,
+          ],
+          "type": "moveTo",
+        },
+        Object {
+          "props": Object {
+            "x": 0,
+            "y": 1,
+          },
+          "transform": Array [
+            1,
+            0,
+            0,
+            1,
+            100,
+            100,
+          ],
+          "type": "lineTo",
+        },
+      ],
+    },
+    "transform": Array [
+      1,
+      0,
+      0,
+      1,
+      100,
+      100,
+    ],
+    "type": "stroke",
+  },
+  Object {
+    "props": Object {},
+    "transform": Array [
+      1,
+      0,
+      0,
+      1,
+      0,
+      0,
+    ],
+    "type": "restore",
+  },
+]
+`;
+
+exports[`drawMany with default options 1`] = `
+Array [
+  Object {
+    "props": Object {},
+    "transform": Array [
+      1,
+      0,
+      0,
+      1,
+      0,
+      0,
+    ],
+    "type": "save",
+  },
+  Object {
+    "props": Object {
+      "value": "#000000",
+    },
+    "transform": Array [
+      1,
+      0,
+      0,
+      1,
+      0,
+      0,
+    ],
+    "type": "strokeStyle",
+  },
+  Object {
+    "props": Object {
+      "value": 3,
+    },
+    "transform": Array [
+      1,
+      0,
+      0,
+      1,
+      0,
+      0,
+    ],
+    "type": "lineWidth",
+  },
+  Object {
+    "props": Object {
+      "value": "round",
+    },
+    "transform": Array [
+      1,
+      0,
+      0,
+      1,
+      0,
+      0,
+    ],
+    "type": "lineCap",
+  },
+  Object {
+    "props": Object {
+      "x": 0,
+      "y": 0,
+    },
+    "transform": Array [
+      1,
+      0,
+      0,
+      1,
+      0,
+      0,
+    ],
+    "type": "translate",
+  },
+  Object {
+    "props": Object {},
+    "transform": Array [
+      1,
+      0,
+      0,
+      1,
+      0,
+      0,
+    ],
+    "type": "beginPath",
+  },
+  Object {
+    "props": Object {
+      "x": 0,
+      "y": 0,
+    },
+    "transform": Array [
+      1,
+      0,
+      0,
+      1,
+      0,
+      0,
+    ],
+    "type": "moveTo",
+  },
+  Object {
+    "props": Object {
+      "x": 0,
+      "y": -1,
+    },
+    "transform": Array [
+      1,
+      0,
+      0,
+      1,
+      0,
+      0,
+    ],
+    "type": "lineTo",
+  },
+  Object {
+    "props": Object {
+      "path": Array [
+        Object {
+          "props": Object {},
+          "transform": Array [
+            1,
+            0,
+            0,
+            1,
+            0,
+            0,
+          ],
+          "type": "beginPath",
+        },
+        Object {
+          "props": Object {
+            "x": 0,
+            "y": 0,
+          },
+          "transform": Array [
+            1,
+            0,
+            0,
+            1,
+            0,
+            0,
+          ],
+          "type": "moveTo",
+        },
+        Object {
+          "props": Object {
+            "x": 0,
+            "y": -1,
+          },
+          "transform": Array [
+            1,
+            0,
+            0,
+            1,
+            0,
+            0,
+          ],
+          "type": "lineTo",
+        },
+      ],
+    },
+    "transform": Array [
+      1,
+      0,
+      0,
+      1,
+      0,
+      0,
+    ],
+    "type": "stroke",
+  },
+  Object {
+    "props": Object {
+      "x": 0,
+      "y": -1,
+    },
+    "transform": Array [
+      1,
+      0,
+      0,
+      1,
+      0,
+      -1,
+    ],
+    "type": "translate",
+  },
+  Object {
+    "props": Object {
+      "angle": 0,
+    },
+    "transform": Array [
+      1,
+      0,
+      0,
+      1,
+      0,
+      -1,
+    ],
+    "type": "rotate",
+  },
+  Object {
+    "props": Object {},
+    "transform": Array [
+      1,
+      0,
+      0,
+      1,
+      0,
+      -1,
+    ],
+    "type": "beginPath",
+  },
+  Object {
+    "props": Object {
+      "x": 0,
+      "y": 0,
+    },
+    "transform": Array [
+      1,
+      0,
+      0,
+      1,
+      0,
+      -1,
+    ],
+    "type": "moveTo",
+  },
+  Object {
+    "props": Object {
+      "x": 7,
+      "y": 7,
+    },
+    "transform": Array [
+      1,
+      0,
+      0,
+      1,
+      0,
+      -1,
+    ],
+    "type": "lineTo",
+  },
+  Object {
+    "props": Object {
+      "x": 0,
+      "y": 0,
+    },
+    "transform": Array [
+      1,
+      0,
+      0,
+      1,
+      0,
+      -1,
+    ],
+    "type": "moveTo",
+  },
+  Object {
+    "props": Object {
+      "x": -7,
+      "y": 7,
+    },
+    "transform": Array [
+      1,
+      0,
+      0,
+      1,
+      0,
+      -1,
+    ],
+    "type": "lineTo",
+  },
+  Object {
+    "props": Object {
+      "path": Array [
+        Object {
+          "props": Object {},
+          "transform": Array [
+            1,
+            0,
+            0,
+            1,
+            0,
+            -1,
+          ],
+          "type": "beginPath",
+        },
+        Object {
+          "props": Object {
+            "x": 0,
+            "y": 0,
+          },
+          "transform": Array [
+            1,
+            0,
+            0,
+            1,
+            0,
+            -1,
+          ],
+          "type": "moveTo",
+        },
+        Object {
+          "props": Object {
+            "x": 7,
+            "y": 7,
+          },
+          "transform": Array [
+            1,
+            0,
+            0,
+            1,
+            0,
+            -1,
+          ],
+          "type": "lineTo",
+        },
+        Object {
+          "props": Object {
+            "x": 0,
+            "y": 0,
+          },
+          "transform": Array [
+            1,
+            0,
+            0,
+            1,
+            0,
+            -1,
+          ],
+          "type": "moveTo",
+        },
+        Object {
+          "props": Object {
+            "x": -7,
+            "y": 7,
+          },
+          "transform": Array [
+            1,
+            0,
+            0,
+            1,
+            0,
+            -1,
+          ],
+          "type": "lineTo",
+        },
+      ],
+    },
+    "transform": Array [
+      1,
+      0,
+      0,
+      1,
+      0,
+      -1,
+    ],
+    "type": "stroke",
+  },
+  Object {
+    "props": Object {},
+    "transform": Array [
+      1,
+      0,
+      0,
+      1,
+      0,
+      0,
+    ],
+    "type": "restore",
+  },
+  Object {
+    "props": Object {},
+    "transform": Array [
+      1,
+      0,
+      0,
+      1,
+      0,
+      0,
+    ],
+    "type": "save",
+  },
+  Object {
+    "props": Object {
+      "value": "#000000",
+    },
+    "transform": Array [
+      1,
+      0,
+      0,
+      1,
+      0,
+      0,
+    ],
+    "type": "strokeStyle",
+  },
+  Object {
+    "props": Object {
+      "value": 3,
+    },
+    "transform": Array [
+      1,
+      0,
+      0,
+      1,
+      0,
+      0,
+    ],
+    "type": "lineWidth",
+  },
+  Object {
+    "props": Object {
+      "value": "round",
+    },
+    "transform": Array [
+      1,
+      0,
+      0,
+      1,
+      0,
+      0,
+    ],
+    "type": "lineCap",
+  },
+  Object {
+    "props": Object {
+      "x": 0,
+      "y": 0,
+    },
+    "transform": Array [
+      1,
+      0,
+      0,
+      1,
+      0,
+      0,
+    ],
+    "type": "translate",
+  },
+  Object {
+    "props": Object {},
+    "transform": Array [
+      1,
+      0,
+      0,
+      1,
+      0,
+      0,
+    ],
+    "type": "beginPath",
+  },
+  Object {
+    "props": Object {
+      "x": 0,
+      "y": 0,
+    },
+    "transform": Array [
+      1,
+      0,
+      0,
+      1,
+      0,
+      0,
+    ],
+    "type": "moveTo",
+  },
+  Object {
+    "props": Object {
+      "x": 0,
+      "y": 1,
+    },
+    "transform": Array [
+      1,
+      0,
+      0,
+      1,
+      0,
+      0,
+    ],
+    "type": "lineTo",
+  },
+  Object {
+    "props": Object {
+      "path": Array [
+        Object {
+          "props": Object {},
+          "transform": Array [
+            1,
+            0,
+            0,
+            1,
+            0,
+            0,
+          ],
+          "type": "beginPath",
+        },
+        Object {
+          "props": Object {
+            "x": 0,
+            "y": 0,
+          },
+          "transform": Array [
+            1,
+            0,
+            0,
+            1,
+            0,
+            0,
+          ],
+          "type": "moveTo",
+        },
+        Object {
+          "props": Object {
+            "x": 0,
+            "y": 1,
+          },
+          "transform": Array [
+            1,
+            0,
+            0,
+            1,
+            0,
+            0,
+          ],
+          "type": "lineTo",
+        },
+      ],
+    },
+    "transform": Array [
+      1,
+      0,
+      0,
+      1,
+      0,
+      0,
+    ],
+    "type": "stroke",
+  },
+  Object {
+    "props": Object {
+      "x": 0,
+      "y": 1,
+    },
+    "transform": Array [
+      1,
+      0,
+      0,
+      1,
+      0,
+      1,
+    ],
+    "type": "translate",
+  },
+  Object {
+    "props": Object {
+      "angle": 3.141592653589793,
+    },
+    "transform": Array [
+      -1,
+      1.2246467991473532e-16,
+      -1.2246467991473532e-16,
+      -1,
+      0,
+      1,
+    ],
+    "type": "rotate",
+  },
+  Object {
+    "props": Object {},
+    "transform": Array [
+      -1,
+      1.2246467991473532e-16,
+      -1.2246467991473532e-16,
+      -1,
+      0,
+      1,
+    ],
+    "type": "beginPath",
+  },
+  Object {
+    "props": Object {
+      "x": 0,
+      "y": 0,
+    },
+    "transform": Array [
+      -1,
+      1.2246467991473532e-16,
+      -1.2246467991473532e-16,
+      -1,
+      0,
+      1,
+    ],
+    "type": "moveTo",
+  },
+  Object {
+    "props": Object {
+      "x": 7,
+      "y": 7,
+    },
+    "transform": Array [
+      -1,
+      1.2246467991473532e-16,
+      -1.2246467991473532e-16,
+      -1,
+      0,
+      1,
+    ],
+    "type": "lineTo",
+  },
+  Object {
+    "props": Object {
+      "x": 0,
+      "y": 0,
+    },
+    "transform": Array [
+      -1,
+      1.2246467991473532e-16,
+      -1.2246467991473532e-16,
+      -1,
+      0,
+      1,
+    ],
+    "type": "moveTo",
+  },
+  Object {
+    "props": Object {
+      "x": -7,
+      "y": 7,
+    },
+    "transform": Array [
+      -1,
+      1.2246467991473532e-16,
+      -1.2246467991473532e-16,
+      -1,
+      0,
+      1,
+    ],
+    "type": "lineTo",
+  },
+  Object {
+    "props": Object {
+      "path": Array [
+        Object {
+          "props": Object {},
+          "transform": Array [
+            -1,
+            1.2246467991473532e-16,
+            -1.2246467991473532e-16,
+            -1,
+            0,
+            1,
+          ],
+          "type": "beginPath",
+        },
+        Object {
+          "props": Object {
+            "x": 0,
+            "y": 0,
+          },
+          "transform": Array [
+            -1,
+            1.2246467991473532e-16,
+            -1.2246467991473532e-16,
+            -1,
+            0,
+            1,
+          ],
+          "type": "moveTo",
+        },
+        Object {
+          "props": Object {
+            "x": 7,
+            "y": 7,
+          },
+          "transform": Array [
+            -1,
+            1.2246467991473532e-16,
+            -1.2246467991473532e-16,
+            -1,
+            0,
+            1,
+          ],
+          "type": "lineTo",
+        },
+        Object {
+          "props": Object {
+            "x": 0,
+            "y": 0,
+          },
+          "transform": Array [
+            -1,
+            1.2246467991473532e-16,
+            -1.2246467991473532e-16,
+            -1,
+            0,
+            1,
+          ],
+          "type": "moveTo",
+        },
+        Object {
+          "props": Object {
+            "x": -7,
+            "y": 7,
+          },
+          "transform": Array [
+            -1,
+            1.2246467991473532e-16,
+            -1.2246467991473532e-16,
+            -1,
+            0,
+            1,
+          ],
+          "type": "lineTo",
+        },
+      ],
+    },
+    "transform": Array [
+      -1,
+      1.2246467991473532e-16,
+      -1.2246467991473532e-16,
+      -1,
+      0,
+      1,
+    ],
+    "type": "stroke",
+  },
+  Object {
+    "props": Object {},
+    "transform": Array [
+      1,
+      0,
+      0,
+      1,
+      0,
+      0,
+    ],
+    "type": "restore",
+  },
+]
+`;

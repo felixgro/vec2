@@ -13,16 +13,29 @@ test('has static normal constructors', () => {
 });
 
 test('has random constructor', () => {
-   const vec = Vec2.random();
+   const vecA = Vec2.random();
+   const vecB = Vec2.random();
+   const vecC = Vec2.random();
+   const vecD = Vec2.random();
+   const vecE = Vec2.random();
+   const vecF = Vec2.random();
 
-   expect(vec.length).toBe(1);
+   expect(vecA.length).toBeCloseTo(1);
+   expect(vecB.length).toBeCloseTo(1);
+   expect(vecC.length).toBeCloseTo(1);
+   expect(vecD.length).toBeCloseTo(1);
+   expect(vecE.length).toBeCloseTo(1);
+   expect(vecF.length).toBeCloseTo(1);
 });
 
 test('has angle constructor', () => {
    const vecA = Vec2.fromAngle(0, 1);
+   const vecB = Vec2.fromAngle(Math.PI * 0.5);
+   const vecC = Vec2.fromAngle(Math.PI);
 
-   expect(vecA.rawPosition).toEqual([1, 0]);
    expect(Vec2.right().angleTo(vecA)).toBe(0);
+   expect(Vec2.down().angleTo(vecB)).toBe(0);
+   expect(Vec2.left().angleTo(vecC)).toBe(0);
 });
 
 test('has length', () => {
@@ -97,12 +110,22 @@ test('can calculate distance', () => {
    expect(vecB.distanceTo(vecA)).toBe(vecA.distanceTo(vecB));
 });
 
-test('can calculate angle', () => {
-   const vecA = new Vec2(1, 0);
-   const vecB = new Vec2(0, 1);
+test('can calculate angle in range', () => {
+   const vecA = Vec2.up();
+   const vecB = Vec2.left();
+   const vecC = Vec2.left();
 
-   expect(vecA.angleTo(vecB)).toBe(Math.PI / 2);
-   expect(vecB.angleTo(vecA)).toBe(-Math.PI / 2);
+   expect(vecA.angleTo(vecB)).toBe(-Math.PI * 0.5);
+   expect(vecB.angleTo(vecA)).toBe(Math.PI * 0.5);
+   // expect(vecB.angleTo(vecA)).toBe(Math.PI);
+});
+
+test('can calculate angle in range [0, 2π]', () => {
+   const vecA = new Vec2(0, 1);
+   const vecB = new Vec2(1, 0);
+
+   expect(vecA.angleTo(vecB, true)).toBe(Math.PI * 1.5);
+   expect(vecB.angleTo(vecA, true)).toBe(Math.PI * 0.5);
 });
 
 test('can check equality', () => {

@@ -3,4 +3,6 @@
 /dist
 /src
 /tests
-jestconfig.json
+/coverage
+
+jest.config.ts
