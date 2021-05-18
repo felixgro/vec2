@@ -1,8 +1,7 @@
-/.parcel-cache
-/demo
-/dist
-/src
-/tests
+/__tests__
 /coverage
+/types
+/src
 
 jest.config.ts
+rollup.config.js

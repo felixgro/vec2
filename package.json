@@ -2,6 +2,7 @@
 	"name": "@felixgro/vec2",
 	"version": "1.1.0",
 	"main": "lib/index.js",
+	"types": "lib/index.d.ts",
 	"description": "An intuitive, lightweight 2d vector library with built-in canvas support.",
 	"keywords": [
 		"vectors",
@@ -16,18 +17,19 @@
 		"url": "https://felixgrohs.dev"
 	},
 	"scripts": {
-		"build": "tsc",
-		"serve": "parcel demo/index.html",
-		"test": "jest --config jest.config.ts",
-		"prepublish": "npm run build"
+		"build": "tsc && rollup --config",
+		"test": "jest --config jest.config.ts"
 	},
 	"devDependencies": {
+		"@rollup/plugin-typescript": "^8.2.1",
 		"@types/jest": "^26.0.23",
 		"jest": "^26.6.3",
 		"jest-canvas-mock": "^2.3.1",
-		"parcel": "^2.0.0-beta.2",
+		"rollup": "^2.48.0",
+		"rollup-plugin-dts": "^3.0.1",
 		"ts-jest": "^26.5.6",
 		"ts-node": "^9.1.1",
+		"tslib": "^2.2.0",
 		"typescript": "^4.2.4"
 	}
 }
