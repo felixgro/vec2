@@ -15,9 +15,9 @@ export interface DrawOptions {
  * @param ctx
  * @param options
  */
-export const draw = (vec: Vec2, ctx: CanvasRenderingContext2D, {
+const renderVec = (vec: Vec2, ctx: CanvasRenderingContext2D, {
    origin = new Vec2(),
-   color = 'black',
+   color = '#000',
    width = 3,
    arrow = true
 }: DrawOptions = {}) => {
@@ -48,18 +48,12 @@ export const draw = (vec: Vec2, ctx: CanvasRenderingContext2D, {
    ctx.restore();
 }
 
-/**
- * Render multiple vectors with specified canvas2d context.
- * 
- * @param vectors
- * @param ctx
- * @param options
- */
-export const drawMany = (vectors: Vec2[], ctx: CanvasRenderingContext2D, {
-   origin = new Vec2(),
-   color = 'black',
-   width = 3,
-   arrow = true
-}: DrawOptions = {}) => {
-   for (const vec of vectors) draw(vec, ctx, { origin, color, width, arrow });
+
+export const renderOnCanvas = (vec: Vec2 | Vec2[], ctx: CanvasRenderingContext2D, options?: DrawOptions): void => {
+   if (Array.isArray(vec)) {
+      vec.forEach(v => renderVec(v, ctx, options));
+      return;
+   }
+
+   renderVec(vec, ctx, options);
 }

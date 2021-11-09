@@ -1,4 +1,4 @@
-import Vec2, { draw, drawMany } from '../src/index';
+import Vec2, { renderOnCanvas } from '../src/index';
 
 const getCtx = (): CanvasRenderingContext2D => {
    const canvas = document.createElement('canvas');
@@ -10,7 +10,7 @@ describe('draw', () => {
       const vec = Vec2.up();
       const ctx = getCtx();
 
-      draw(vec, ctx);
+      renderOnCanvas(vec, ctx);
 
       // @ts-ignore
       expect(ctx.__getEvents()).toMatchSnapshot();
@@ -20,7 +20,7 @@ describe('draw', () => {
       const vec = Vec2.up();
       const ctx = getCtx();
 
-      draw(vec, ctx, {
+      renderOnCanvas(vec, ctx, {
          origin: new Vec2(100, 100),
          color: '#ff0000',
          width: 3,
@@ -38,7 +38,7 @@ describe('drawMany', () => {
       const vecB = Vec2.down();
       const ctx = getCtx();
 
-      drawMany([vecA, vecB], ctx);
+      renderOnCanvas([vecA, vecB], ctx);
 
       // @ts-ignore
       expect(ctx.__getEvents()).toMatchSnapshot();
@@ -49,7 +49,7 @@ describe('drawMany', () => {
       const vecB = Vec2.down();
       const ctx = getCtx();
 
-      drawMany([vecA, vecB], ctx, {
+      renderOnCanvas([vecA, vecB], ctx, {
          origin: new Vec2(100, 100),
          color: '#ff0000',
          width: 5,
