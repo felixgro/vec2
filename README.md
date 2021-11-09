@@ -26,7 +26,7 @@ import Vec2 from '@felixgro/vec2';
 | ------------- | ---------------- | --------------------------------------------------------------- |
 | x             | number           | x-Coordinate                                                    |
 | y             | number           | y-Coordinate                                                    |
-| rawPosition   | [number, number] | Coordinates as array [x, y] to enable usage of spread operator. |
+| pos		    | [number, number] | Coordinates as array [x, y] to enable usage of spread operator. |
 | length        | number           | absolute length of vector                                       |
 | lengthSquared | number           | squared length of vector                                        |
 
@@ -34,61 +34,90 @@ import Vec2 from '@felixgro/vec2';
 
 Basic instantiation:
 
-```javascript
-const vecA = new Vec2(); // x: 0, y: 0
-const vecB = new Vec2(1, 5);
+```ts
+const vecA = new Vec2();     // x: 0, y: 0
+const vecB = new Vec2(1, 5); // x: 1, y: 5
 ```
 
 Static instantiation methods:
 
-```javascript
-const vecA = Vec2.random();
-const vecB = Vec2.fromAngle(Math.PI, 1);
+```ts
+Vec2.random();
+Vec2.fromAngle(radians: number, length: number);
 
-const vecC = Vec2.up();
-const vecD = Vec2.down();
-const vecE = Vec2.left();
-const vecF = Vec2.right();
+Vec2.up(); 	   	// x: 0, y: -1
+Vec2.down();  	// x: 0, y: 1
+Vec2.right();   // x: 1, y: 0
+Vec2.left();  	// x: -1, y: 0 
 ```
 
 ### Operation Methods
 
-```javascript
-vecA.add(vecB);
-vecA.subtract(vecB);
-vecA.multiply(vecB);
-vecA.divide(vecB);
-
-// works with scalar values as well..
-vecA.multiply(5);
+```ts
+vec.add(vec: Vec2 | number): Vec2;
+vec.subtract(vec: Vec2 | number): Vec2;
+vec.multiply(vec: Vec2 | number): Vec2;
+vec.divide(vec: Vec2 | number): Vec2;
 ```
 
 ### Other Methods
 
-```javascript
-vec.normalize();
-vec.inverse();
-vec.clone();
+```ts
+vec.normalize(): Vec2;
+vec.inverse(): Vec2;
+vec.clone(): Vec2;
 
-vec.rotate(number, boolean);
-vec.setMagnitude(number);
-vec.clampMagnitude(number, number);
+vec.rotate(radians: number, clockwise?: boolean): Vec2;
+vec.setMagnitude(magnitude: number): Vec2;
+vec.clampMagnitude(min: number, max: number): Vec2;
 
-vec.dot(Vec2);
-vec.cross(Vec2);
+vec.dot(vec: Vec2): number;
+vec.cross(vec: Vec2): number;
 
-vec.angleTo(Vec2);
-vec.distanceTo(Vec2);
-vec.equals(Vec2);
+vec.angleTo(vec: Vec2): number;
+vec.distanceTo(vec: Vec2): number;
+vec.equals(vec: Vec2): boolean;
 ```
 
 ## Helpers
+
+### renderOnCanvas
+
+Renders one or multiple vectors on 2d canvas using it's rendering context.
+
+```ts
+import Vec2, { renderOnCanvas } from '@felixgro/vec2';
+
+// get canvas drawing context
+const ctx = someCanvas.getContext('2d');
+
+// draw vector
+renderOnCanvas(vecA, ctx);
+
+// ..or draw many vectors at once
+renderOnCanvas([vecA, vecB, vecC], ctx);
+```
+
+You may pass an additional options object as third parameter:
+
+```ts
+// default options:
+const options = {
+	origin: new Vec2(),
+	color: '#000',
+	width: 3,
+	arrow: true,
+};
+
+renderOnCanvas(vec: Vec2 | Vec2[], ctx: CanvasRenderingContext2D, options: DrawOptions);
+```
+
 
 ### lerp
 
 Linear interpolation between two vectors.
 
-```javascript
+```ts
 import Vec2, { lerp } from '@felixgro/vec2';
 
 const vecA = new Vec2(1, 1);
@@ -101,41 +130,11 @@ const vecC = lerp(vecA, vecB, 0.5); // x: 0, y: 0
 
 Create a random vector between two vectors.
 
-```javascript
+```ts
 import Vec2, { randomBetween } from '@felixgro/vec2';
 
 const vecA = new Vec2(100, 100);
 const vecB = new Vec2(200, 200);
 
 const vecC = randomBetween(vecA, vecB); // 100 < x,y < 200
-```
-
-### draw & drawMany
-
-Renders one or multiple vectors on 2d canvas.
-
-```javascript
-import Vec2, { draw, drawMany } from '@felixgro/vec2';
-
-// get canvas drawing context
-const ctx = someCanvas.getContext('2d');
-
-// draw vector
-draw(vecA, ctx);
-
-// ..or draw many vectors at once
-drawMany([vecA, vecB], ctx);
-```
-
-You may pass an additional options object as third parameter:
-
-```javascript
-const options = {
-	origin: new Vec2(100, 100),
-	color: '#000',
-	width: 2,
-	arrow: true,
-};
-
-draw(vec, ctx, options);
 ```
