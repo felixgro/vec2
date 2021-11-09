@@ -1,6 +1,6 @@
 {
 	"name": "@felixgro/vec2",
-	"version": "1.1.1",
+	"version": "1.2.0",
 	"main": "lib/index.js",
 	"types": "lib/index.d.ts",
 	"description": "An intuitive, lightweight 2d vector library with built-in canvas support.",
