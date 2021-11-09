@@ -15,5 +15,5 @@ test('lerp', () => {
 
    const vecC = lerp(vecA, vecB, 0.5);
 
-   expect(vecC.rawPosition).toEqual([0, 0])
+   expect(vecC.pos).toEqual([0, 0])
 });

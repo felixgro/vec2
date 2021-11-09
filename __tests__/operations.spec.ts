@@ -6,7 +6,7 @@ describe('addition', () => {
 
       vec.add(1);
 
-      expect(vec.rawPosition).toEqual([2, 2]);
+      expect(vec.pos).toEqual([2, 2]);
    });
 
    test('with vector', () => {
@@ -14,7 +14,7 @@ describe('addition', () => {
 
       vec.add(Vec2.right());
 
-      expect(vec.rawPosition).toEqual([2, 1]);
+      expect(vec.pos).toEqual([2, 1]);
    });
 });
 
@@ -24,7 +24,7 @@ describe('subtraction', () => {
 
       vec.subtract(1);
 
-      expect(vec.rawPosition).toEqual([0, 0]);
+      expect(vec.pos).toEqual([0, 0]);
    });
 
    test('with vector', () => {
@@ -32,7 +32,7 @@ describe('subtraction', () => {
 
       vec.subtract(Vec2.right());
 
-      expect(vec.rawPosition).toEqual([0, 1]);
+      expect(vec.pos).toEqual([0, 1]);
    });
 });
 
@@ -42,7 +42,7 @@ describe('multiplication', () => {
 
       vec.multiply(2);
 
-      expect(vec.rawPosition).toEqual([2, 2]);
+      expect(vec.pos).toEqual([2, 2]);
    });
 
    test('with vector', () => {
@@ -50,7 +50,7 @@ describe('multiplication', () => {
 
       vec.multiply(Vec2.right());
 
-      expect(vec.rawPosition).toEqual([1, 0]);
+      expect(vec.pos).toEqual([1, 0]);
    });
 });
 
@@ -60,7 +60,7 @@ describe('division', () => {
 
       vec.divide(2);
 
-      expect(vec.rawPosition).toEqual([2, 4]);
+      expect(vec.pos).toEqual([2, 4]);
    });
 
    test('with vector', () => {
@@ -68,6 +68,6 @@ describe('division', () => {
 
       vec.divide(new Vec2(2, 5));
 
-      expect(vec.rawPosition).toEqual([2, 2]);
+      expect(vec.pos).toEqual([2, 2]);
    });
 });

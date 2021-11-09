@@ -1,15 +1,15 @@
 import Vec2 from '../src/Vec2';
 
 test('has default constructor', () => {
-   expect(new Vec2().rawPosition).toEqual([0, 0]);
-   expect(new Vec2(1, 1).rawPosition).toEqual([1, 1]);
+   expect(new Vec2().pos).toEqual([0, 0]);
+   expect(new Vec2(1, 1).pos).toEqual([1, 1]);
 });
 
 test('has static normal constructors', () => {
-   expect(Vec2.up().rawPosition).toEqual([0, -1]);
-   expect(Vec2.down().rawPosition).toEqual([0, 1]);
-   expect(Vec2.left().rawPosition).toEqual([-1, 0]);
-   expect(Vec2.right().rawPosition).toEqual([1, 0]);
+   expect(Vec2.up().pos).toEqual([0, -1]);
+   expect(Vec2.down().pos).toEqual([0, 1]);
+   expect(Vec2.left().pos).toEqual([-1, 0]);
+   expect(Vec2.right().pos).toEqual([1, 0]);
 });
 
 test('has random constructor', () => {
@@ -45,13 +45,13 @@ test('has length', () => {
 test('can normalize', () => {
    const vec = new Vec2(5, 0);
 
-   expect(vec.normalize().rawPosition).toEqual([1, 0]);
+   expect(vec.normalize().pos).toEqual([1, 0]);
 });
 
 test('can inverse', () => {
    const vec = new Vec2(5, -2);
 
-   expect(vec.inverse().rawPosition).toEqual([-5, 2]);
+   expect(vec.inverse().pos).toEqual([-5, 2]);
 });
 
 test('can rotate', () => {

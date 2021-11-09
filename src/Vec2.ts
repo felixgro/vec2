@@ -73,9 +73,9 @@ export default class Vec2 {
    }
 
    /**
-    * Get coordinates as [x, y] array.
+    * Get coordinates as [x, y] tuple.
     */
-   get rawPosition(): [number, number] {
+   get pos(): [number, number] {
       return [this.x, this.y];
    }
 
@@ -168,7 +168,7 @@ export default class Vec2 {
     * Rotate vector around origin.
     * 
     * @param angle in radians
-    * @param origin (0, 0)
+    * @param origin Vec2(0, 0)
     * @param clockwise true
     */
    public rotate(angle: number, clockwise = true, origin = new Vec2()): Vec2 {

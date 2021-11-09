@@ -26,16 +26,16 @@ export const draw = (vec: Vec2, ctx: CanvasRenderingContext2D, {
    ctx.lineWidth = width;
    ctx.lineCap = 'round';
 
-   ctx.translate(...origin.rawPosition);
+   ctx.translate(...origin.pos);
    ctx.beginPath();
    ctx.moveTo(0, 0);
-   ctx.lineTo(...vec.rawPosition);
+   ctx.lineTo(...vec.pos);
    ctx.stroke();
 
    if (arrow) {
       const arrowLength = clamp(2 * width, 7, 50);
 
-      ctx.translate(...vec.rawPosition);
+      ctx.translate(...vec.pos);
       ctx.rotate(Vec2.up().angleTo(vec));
       ctx.beginPath();
       ctx.moveTo(0, 0);
